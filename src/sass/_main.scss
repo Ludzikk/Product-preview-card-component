@@ -1,0 +1,107 @@
+@use "./colors" as *;
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2em 1em;
+  min-height: 100vh;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  border-radius: 15px;
+  overflow: hidden;
+
+  &__top {
+    height: 250px;
+    background-image: url("../img/image-product-mobile.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__bottom {
+    padding: 2em;
+    background-color: $White;
+  }
+
+  &__product-type {
+    padding-bottom: 1em;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: $Darkgrayishblue;
+  }
+
+  &__title {
+    padding-bottom: 0.5em;
+    font-size: 3rem;
+    font-family: "Fraunces", serif;
+    text-transform: capitalize;
+    color: $Verydarkblue;
+  }
+
+  &__text {
+    padding-bottom: 1.8em;
+    letter-spacing: 0.5px;
+    color: $Darkgrayishblue;
+  }
+
+  &__prices {
+    display: flex;
+    align-items: center;
+    padding-bottom: 1.5em;
+    font-family: "Fraunces", serif;
+  }
+
+  &__current-price {
+    padding-right: 0.5em;
+    font-size: 3rem;
+    color: $Darkcyan;
+  }
+
+  &__old-price {
+    text-decoration: line-through;
+    color: $Darkgrayishblue;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em 0;
+    width: 100%;
+    font-size: 1.6rem;
+    border: none;
+    border-radius: 10px;
+    color: $White;
+    background-color: $Darkcyan;
+    cursor: pointer;
+    transition: background-color .5s;
+
+    &:hover {
+        background-color: hsl(158, 36%, 24%);
+    }
+  }
+
+  &__icon {
+    padding-right: 0.5em;
+  }
+}
+
+@media (min-width: 992px) {
+    .card {
+        flex-direction: row;
+
+        &__top {
+            height: auto;
+            width: 50%;
+            background-image: url("../img/image-product-desktop.jpg");
+        }
+
+        &__bottom {
+            width: 50%;
+        }
+    }
+}
